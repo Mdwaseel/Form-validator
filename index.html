@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100">
+    
+    <div class="flex items-center justify-center h-screen">
+        
+        <div class="w-full max-w-md p-6 bg-white rounded-lg shadow-md">
+            <h1 class="text-3xl  text-center font-bold mb-6">Form Validator</h1>
+            <input type="text" id="name" placeholder="Enter Your Name"
+                class="w-full mb-4 py-2 px-3 border rounded-lg focus:outline-none focus:ring \
+                focus:border-blue-300">
+                 <input type="email" id="ema" placeholder="Enter Your Email"
+                class="w-full mb-4 py-2 px-3 border rounded-lg focus:outline-none focus:ring \
+                focus:border-blue-300">
+            <input type="number" id="num" placeholder="Enter Your Number"
+                class="w-full mb-4 py-2 px-3 border rounded-lg focus:outline-none focus:ring \
+                focus:border-blue-300">
+           
+            <input type="password" id="pass" placeholder="Enter Your Password"
+                class="w-full mb-4 py-2 px-3 border rounded-lg focus:outline-none focus:ring \
+                focus:border-blue-300">
+            <p id="err" class="text-red-500 mb-4"></p>
+            <p id="numrr" class="text-red-500 mb-4"></p>
+            <button onclick="err()"
+                class="w-full py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg \
+                focus:outline-none focus:ring focus:border-blue-300">
+                Submit
+            </button>
+        </div>
+    </div>
+
+    <script>
+        function err() {
+            const Name = document.getElementById("name").value;
+            const err = document.getElementById("err");
+            const pas = document.getElementById("pass");
+            const num = document.getElementById("num").value;
+            const numrr = document.getElementById("numrr");
+            const ema = document.getElementById("ema");
+            const lettersOnlyRegex = /^[A-Za-z]+$/;
+            const emailOnlyRegex = /^[a-z@.]+$/;
+            const passWithSymbolsRegex = /^[A-Za-z1-9@#$_%&*+\-!?:;,./\\()[\]{}|<>~]+$/;
+
+            err.innerText = "";
+            numrr.innerText = "";
+
+            if (Name === '' || Name.length > 16) {
+                err.innerText = "Please enter a valid name (1-16 characters)";
+                err.style.color = "red";
+            } else if (!lettersOnlyRegex.test(Name)) {
+                err.innerText = "Please enter a valid name without numbers and symbols";
+                err.style.color = "red";
+            } else if (num === '') {
+                numrr.innerText = "Please enter a valid number";
+                numrr.style.color = "red";
+            } else if (!passWithSymbolsRegex.test(pas)) {
+                err.innerText = "Please enter a valid password using symbols and uppercase letters";
+                err.style.color = "red";
+            } else if (!emailOnlyRegex.test(ema.value)) {
+                err.innerText = "Please enter a valid email";
+                err.style.color = "red";
+            } else {
+                err.innerText = "Form submitted successfully!";
+                err.style.color = "green";
+            }
+        }
+    </script>
+
+</body>
+
+</html>
