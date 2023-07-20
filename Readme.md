@@ -11,7 +11,7 @@ This is a simple HTML form with form validation using JavaScript. The form is st
 1. Clone the repository:
 
 ```bash
-[git clone https://github.com/your-username/your-repo.git](https://github.com/Mdwaseel/Form-validator.git)
+[git clone https://github.com/Mdwaseel/Form-validator.git]
 ```
 
 2. Open the `index.html` file in your web browser.
