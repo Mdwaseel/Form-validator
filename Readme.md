@@ -20,7 +20,7 @@ git clone https://github.com/your-username/your-repo.git
 
 ## Live Demo
 
-You can also check out the live demo [here](https://your-username.github.io/your-repo/).
+You can also check out the live demo [here](https://github.com/Mdwaseel/Form-validator.git).
 
 ## Form Validation Rules
 
